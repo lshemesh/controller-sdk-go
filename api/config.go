@@ -31,6 +31,10 @@ type Config struct {
 	// (ex 1) or in milli units to reflect the number of CPU shares (ex 500m).
 	CPU map[string]interface{} `json:"cpu,omitempty"`
 	// Healthcheck is map of healthchecks for each process that the application uses.
+	LifecyclePostStart map[string]interface{} `json:"lifecycle_post_start,omitempty"`
+	// LifecyclePostStart is a map of lifecycle hook handlers for each process that the application uses.
+	LifecyclePreStop map[string]interface{} `json:"lifecycle_pre_stop,omitempty"`
+	// LifecyclePreStop is a map of lifecycle hook handlers for each process that the application uses.
 	Healthcheck map[string]*Healthchecks `json:"healthcheck,omitempty"`
 	// Tags restrict applications to run on k8s nodes with that label.
 	Tags map[string]interface{} `json:"tags,omitempty"`
